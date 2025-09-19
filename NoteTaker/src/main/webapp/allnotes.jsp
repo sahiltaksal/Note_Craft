@@ -9,6 +9,7 @@
 <%@include file="all_jsp_css.jsp"%>
 <style>
     body {
+    
         background-color: #f8f9fa;
     }
     .card {
