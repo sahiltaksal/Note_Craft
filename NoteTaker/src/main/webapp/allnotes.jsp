@@ -9,7 +9,6 @@
 <%@include file="all_jsp_css.jsp"%>
 <style>
     body {
-    
         background-color: #f8f9fa;
     }
     .card {
@@ -20,8 +19,12 @@
     .card:hover {
         transform: scale(1.02);
     }
-    .delete-btn {
+    .action-btns {
         float: right;
+    }
+    .action-btns form {
+        display: inline-block;
+        margin-left: 5px;
     }
 </style>
 </head>
@@ -46,11 +49,19 @@
                         <p class="card-text"><%= note.getContent() %></p>
                         <small class="text-muted">ID: <%= note.getId() %></small>
                         
-                        <!-- Delete Button -->
-                        <form action="DeleteNoteServlet" method="post" class="delete-btn">
-                            <input type="hidden" name="noteId" value="<%= note.getId() %>">
-                            <button type="submit" class="btn btn-danger btn-sm">Delete</button>
-                        </form>
+                        <div class="action-btns">
+                            <!-- Update Button -->
+                            <form action="UpdateNoteServlet" method="get">
+                                <input type="hidden" name="noteId" value="<%= note.getId() %>">
+                                <button type="submit" class="btn btn-warning btn-sm">Update</button>
+                            </form>
+
+                            <!-- Delete Button -->
+                            <form action="DeleteNoteServlet" method="post">
+                                <input type="hidden" name="noteId" value="<%= note.getId() %>">
+                                <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                            </form>
+                        </div>
                     </div>
                 </div>
             <%

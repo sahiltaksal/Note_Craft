@@ -12,13 +12,14 @@
         <li class="nav-item">
           <a class="nav-link" href="add_notes.jsp">Add Note</a>
         </li>
-        
         <li class="nav-item">
-          <a class="nav-link" href=" allnotes.jsp">Show Notes</a>
+          <a class="nav-link" href="allnotes.jsp">Show Notes</a>
         </li>
       </ul>
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
+      
+      <!-- Search Form -->
+      <form class="d-flex" role="search" action="SearchNoteServlet" method="get">
+        <input class="form-control me-2" type="search" name="query" placeholder="Search notes..." aria-label="Search" required/>
         <button class="btn btn-outline-success" type="submit">Search</button>
       </form>
     </div>
